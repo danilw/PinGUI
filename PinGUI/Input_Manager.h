@@ -26,14 +26,14 @@
 **/
 
 #include <unordered_map>
-#include <SDL.h>
+#include <SDL2/SDL.h>
 #include <ctype.h>
 
-#include "PinGUI/TextManager/TextStorage.h"
-#include "PinGUI/GUI_Sprite.h"
-#include "PinGUI/GUI_Cursor.h"
-#include "PinGUI/PinGUI_Vector.hpp"
-#include "PinGUI/clFunction.hpp"
+#include "TextManager/TextStorage.h"
+#include "GUI_Sprite.h"
+#include "GUI_Cursor.h"
+#include "PinGUI_Vector.hpp"
+#include "clFunction.hpp"
 
 #define STATES_NUM 3
 #define WINDOW_CAM_SCROLLING_SPEED 6

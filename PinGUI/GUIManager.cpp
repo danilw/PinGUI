@@ -229,7 +229,7 @@ void GUIManager::render(){
     if (_needUpdate || _moved)
     {
        if (_moved) 
-           _moved = false;
+           _moved = false ;
            
        updateVBO();
     }
@@ -270,22 +270,10 @@ void GUIManager::renderText(){
     _texter->renderText();
 }
 
-void GUIManager::update(bool allowCollision){
+void GUIManager::update(){
 
     if (_manipulatingElement==nullptr){
-        
-        if (allowCollision)
-            checkCollisions();
-         else {
-
-            for (std::size_t i = 0; i < _ELEMENTS.size(); i++){
-
-                if (_ELEMENTS[i]->isAiming()){
-                    _ELEMENTS[i]->turnOffAim();
-                    _needUpdate = true;
-                }
-            }
-         }
+        checkCollisions();
     } else {
         _manipulatingElement->manipulatingMod(&_manipulatingElement);
     }

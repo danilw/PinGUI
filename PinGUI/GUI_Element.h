@@ -25,20 +25,20 @@
 
 **/
 
-#include <SDL.h>
+#include <SDL2/SDL.h>
 #include <vector>
 #include <functional>
 
-#include "PinGUI/GUI_Sprite.h"
-#include "PinGUI/GUI_Cursor.h"
-#include "PinGUI/GUI_CollisionManager.cpp"
-#include "PinGUI/GUI_ColorManager.h"
-#include "PinGUI/Input_Manager.h"
-#include "PinGUI/stuff.h"
-#include "PinGUI/SheetManager.h"
-#include "PinGUI/PinGUI_Rect.hpp"
-#include "PinGUI/clFunction.hpp"
-#include "PinGUI/CropManager.hpp"
+#include "GUI_Sprite.h"
+#include "GUI_Cursor.h"
+#include "GUI_CollisionManager.cpp"
+#include "GUI_ColorManager.h"
+#include "Input_Manager.h"
+#include "stuff.h"
+#include "SheetManager.h"
+#include "PinGUI_Rect.hpp"
+#include "clFunction.hpp"
+#include "CropManager.hpp"
 
 enum elementType{
     BLANK,
@@ -165,9 +165,9 @@ class GUI_Element
         float getTopPoint(int pos = 0);
         PinGUI::Vector2<GUIPos> getPositionVector();
         PinGUI::Vector2<GUIPos>* getPositionVector_P();
-    
-        bool isAiming();
-        void setAim(bool state);
 };
+
+//Member function pointer
+typedef void (*clFunction)();
 
 #endif // GUI_ELEMENT_H

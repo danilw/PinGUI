@@ -25,7 +25,7 @@
 
 **/
 
-#include "PinGUI/GUI_Element.h"
+#include "../GUI_Element.h"
 
 #define BASIC_ARROW_Y_OFFSET 2
 

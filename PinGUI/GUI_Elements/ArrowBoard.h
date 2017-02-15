@@ -26,12 +26,12 @@
 **/
 
 
-#include <SDL.h>
-#include <SDL_image.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 
-#include "PinGUI/GUI_Elements/ClipBoard.h"
-#include "PinGUI/GUI_Elements/Window_Arrow.h"
-#include "PinGUI/SheetManager.h"
+#include "../GUI_Elements/ClipBoard.h"
+#include "../GUI_Elements/Window_Arrow.h"
+#include "../SheetManager.h"
 
 #define ARROW_OFFSET 3
 #define HORIZONTAL_ARROWS_OFFSET 4

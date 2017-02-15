@@ -22,7 +22,7 @@
 
 **/
 
-#include "PinGUI/GL_Vertex.h"
+#include "GL_Vertex.h"
 namespace PinGUI{
     VertexColor::VertexColor(){
 

@@ -25,18 +25,18 @@
 
 **/
 
-#include <SDL_image.h>
-#include <SDL_ttf.h>
+#include <SDL2/SDL_image.h>
+#include <SDL2/SDL_ttf.h>
 #include <vector>
 #include <iostream>
 #include <cstring>
 
-#include "PinGUI/GL_Vertex.h"
+#include "GL_Vertex.h"
 
-#include "PinGUI//ErrorManager.h"
-#include "PinGUI/stuff.h"
-#include "PinGUI/PinGUI_Vector.hpp"
-#include "PinGUI/PinGUI_Rect.hpp"
+#include "ErrorManager.h"
+#include "stuff.h"
+#include "PinGUI_Vector.hpp"
+#include "PinGUI_Rect.hpp"
 
 typedef float GUIPos;
 

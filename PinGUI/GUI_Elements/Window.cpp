@@ -23,6 +23,7 @@
 **/
 
 #include "Window.h"
+#include <boost/bind.hpp>
 
 Window::Window(PinGUI::Rect mainFrame, std::vector<std::string> tabs, windowElementType type, element_shape shape):
     _mainFrame(mainFrame),
@@ -72,7 +73,7 @@ Window::Window(PinGUI::Rect mainFrame, std::vector<std::string> tabs, windowElem
         initTab();
 
     PinGUI::basicPointer tmpFunction;
-    tmpFunction._function = std::bind(Window::rollbackTabCamera,this);
+    tmpFunction._function = boost::bind(&Window::rollbackTabCamera,this);
 
     for (std::size_t i = 0; i < _TABS.size(); i++)
         _TABS[i]->windowTab->setRollBackFunction(tmpFunction);
@@ -133,7 +134,7 @@ void Window::createTabs(std::vector<std::string>& tabs, PinGUI::Rect& positionRe
         _TABS.back()->windowTab->setTabDimensions(_mainFrame);
 
         PinGUI::basicPointer tmpF;
-        tmpF._function = std::bind(Window::cropTabArea,this);
+        tmpF._function = boost::bind(&Window::cropTabArea,this);
         _TABS.back()->windowTab->getGUI()->setFunction(tmpF);
 
     }
@@ -154,7 +155,7 @@ void Window::createEmptyTabLine(PinGUI::Rect& positionRect){
     _TABS.back()->windowTab->setTabDimensions(_mainFrame);
 
     PinGUI::basicPointer tmpF;
-    tmpF._function = std::bind(Window::cropTabArea,this);
+    tmpF._function = boost::bind(&Window::cropTabArea,this);
     _TABS.back()->windowTab->getGUI()->setFunction(tmpF);
 
     offsetTab(_TABS.back()->windowTab);
@@ -209,13 +210,13 @@ void Window::render(){
     }
 }
 
-void Window::update(bool allowCollision){
+void Window::update(){
 
 
     if (_windowUpdate)
         moveWindow(Input_Manager::getLastVector());
 
-    _mainGUIManager->update(allowCollision);
+    _mainGUIManager->update();
 
     if (_mainWindowTab){
 
@@ -228,7 +229,7 @@ void Window::update(bool allowCollision){
         }
 
         if (_mainWindowTab)
-            _mainWindowTab->getGUI()->update(allowCollision);
+            _mainWindowTab->update();
     }
 }
 
@@ -453,7 +454,7 @@ void Window::createHorizontalScroller(int width){
 PinGUI::scrollFuncPointer Window::getCamRollFunction(){
 
     PinGUI::scrollFuncPointer tmpF;
-    tmpF._function = std::bind(Window::updateTabCamera,this,std::placeholders::_1);
+    tmpF._function = boost::bind(&Window::updateTabCamera,this,_1);
     return tmpF;
 }
 

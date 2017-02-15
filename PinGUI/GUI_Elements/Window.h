@@ -30,16 +30,16 @@
 #include <string>
 #include <functional>
 
-#include "PinGUI/GUI_Elements/WindowTab.h"
-#include "PinGUI/stuff.h"
-#include "PinGUI/PinGUI_Vector.hpp"
-#include "PinGUI/PinGUI_Rect.hpp"
-#include "PinGUI/GUI_Elements/WindowMover.h"
-#include "PinGUI/GUI_Elements/WindowExit.h"
-#include "PinGUI/GUI_Elements/Window_Arrow.h"
-#include "PinGUI/GUI_Elements/HorizontalScroller.h"
-#include "PinGUI/GUI_Elements/VerticalScroller.h"
-#include "PinGUI/CropManager.hpp"
+#include "../GUI_Elements/WindowTab.h"
+#include "../stuff.h"
+#include "../PinGUI_Vector.hpp"
+#include "../PinGUI_Rect.hpp"
+#include "../GUI_Elements/WindowMover.h"
+#include "../GUI_Elements/WindowExit.h"
+#include "../GUI_Elements/Window_Arrow.h"
+#include "../GUI_Elements/HorizontalScroller.h"
+#include "../GUI_Elements/VerticalScroller.h"
+#include "../CropManager.hpp"
 
 /** MANIPULATION WITH WINDOW TABS **/
 #define WINDOW_TAB_FONT_SIZE 14
@@ -212,7 +212,7 @@ class Window: public GUI_Element
 
         void render();
 
-        void update(bool allowCollision = true);
+        void update();
         void update(float deltaTime);
 
         void moveWindow(PinGUI::Vector2<GUIPos> vect);

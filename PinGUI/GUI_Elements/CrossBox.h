@@ -28,7 +28,7 @@
 
 #include <iostream>
 
-#include "PinGUI/GUI_Element.h"
+#include "../GUI_Element.h"
 
 #define CHECKBOX_COLLIDER_X 1
 #define CHECKBOX_COLLIDER_Y 1

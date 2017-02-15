@@ -1,34 +1,31 @@
 # PinGUI
 
-C++/SDL2/OpenGL created by Lubomir "Pinsius" Barantal
- 
- Extensions: 
- Glew for OpenGL functions.
- http://glew.sourceforge.net/ 
- 
- SDL + its extensions:
-  SDL_TTF
-  SDL_Image
- https://www.libsdl.org/
- 
- GLM library for matrix operations
- http://glm.g-truc.net/0.9.8/index.html
- 
-Some of its features are :
-- Text creation (using SDL_TTF extension)
-- Dynamic text handling(if you write a variable, library will automatically update the text if the variable changes)
-- Basic gui elements (that can be networked together so elements can consist of other elements and create pure new style)
-- Advanced window creation options
-- Multitabbing (window can has more tabs with different content)
-- Scrolling
-- Windows have its own coordinate system ( [0;0] is the left corner of the window)
-- Each tab can have its own settings (for example font)
+15 feb 2017
 
+fork of https://github.com/Pinsius/PinGUI
 
-Video : https://www.youtube.com/watch?v=YxVG0uQdU_Y
+I make it work for linux and fix evrythink for build it and launch demo
 
+Extensions you need: SDL2,SDL2_image,SDL2_TTF,GLEW,glm
 
-This library was developed primary for learning purposes but now i consider it to be able
-to handle also the GUI in my projects ( even if it still needs lot of improvements).
+To build demo- open terminal in demo folder, write to terminal:
 
-More info will be provided soon and a small demo too
+>g++  ../PinGUI/TextManager/Text.cpp ../PinGUI/TextManager/TextStorage.cpp ../PinGUI/TextManager/TextManager.cpp ../PinGUI/GUI_Elements/ArrowBoard.cpp ../PinGUI/GUI_Elements/Button.cpp ../PinGUI/GUI_Elements/ClipBoard.cpp ../PinGUI/GUI_Elements/ComboBox.cpp ../PinGUI/GUI_Elements/ComboBoxItem.cpp ../PinGUI/GUI_Elements/CrossBox.cpp ../PinGUI/GUI_Elements/HorizontalScroller.cpp ../PinGUI/GUI_Elements/Image.cpp ../PinGUI/GUI_Elements/Scroller.cpp ../PinGUI/GUI_Elements/VerticalScroller.cpp ../PinGUI/GUI_Elements/VolumeBoard.cpp ../PinGUI/GUI_Elements/Window.cpp ../PinGUI/GUI_Elements/Window_Arrow.cpp ../PinGUI/GUI_Elements/WindowButton.cpp ../PinGUI/GUI_Elements/WindowExit.cpp ../PinGUI/GUI_Elements/WindowMover.cpp ../PinGUI/GUI_Elements/WindowTab.cpp ../PinGUI/CameraManager.cpp ../PinGUI/CropManager.cpp ../PinGUI/ErrorManager.cpp ../PinGUI/GL_Vertex.cpp ../PinGUI/GUI_CollisionManager.cpp ../PinGUI/GUI_ColorManager.cpp ../PinGUI/GUI_Cursor.cpp ../PinGUI/GUI_Element.cpp ../PinGUI/GUIManager.cpp ../PinGUI/GUI_Sprite.cpp ../PinGUI/Input_Manager.cpp ../PinGUI/PINGUI.cpp ../PinGUI/Shader_Program.cpp ../PinGUI/SheetManager.cpp ../PinGUI/VBO_Manager.cpp  FPS_Timer.cpp main.cpp -o demo -std=gnu++14 -lstdc++ -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lGL -lGLEW
+
+>cp -ar ../PinGUI/Shaders/ Shaders
+
+>cp -ar ../PinGUI/TextManager/ TextManager
+
+>cd TextManager
+
+>rm -f *{.h,.cpp}
+
+>cd ..
+
+>./demo
+
+Tested and its work!
+
+( I did not fix memory leaks and other bugs, fixes only to make it work )
+
+![Alt text](/itsok.png?raw=true "Work")

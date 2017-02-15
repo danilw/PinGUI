@@ -165,7 +165,7 @@ void TextManager::loadTextInfo(){
     tmp.a = 255;
 
     _mainTextInfo.color = tmp;
-    _mainTextInfo.font = loadFont("PinGUI/TextManager/Fonts/Oswald-Light.ttf",_fontSize);
+    _mainTextInfo.font = loadFont("TextManager/Fonts/Oswald-Light.ttf",_fontSize);
 }
 
 void TextManager::removeData(std::size_t& position){

@@ -25,8 +25,8 @@
 
 **/
 
-#include "PinGUI/TextManager/TextManager.h"
-#include "PinGUI/stuff.h"
+#include "../TextManager/TextManager.h"
+#include "../stuff.h"
 
 struct additionalStorage{
     PinGUI::Rect* offsetRect;

@@ -26,7 +26,7 @@
 **/
 
 
-#include "PinGUI/GUI_Element.h"
+#include "../GUI_Element.h"
 
 #define VOLUMEBOARD_MOVER_OFFSET 0
 #define VOLUMEBOARD_MOVER_OFFSET_Y -1

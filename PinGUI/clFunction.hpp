@@ -28,7 +28,7 @@
 #include <iostream>
 #include <functional>
 
-#include "PinGUI/PINGUI_Vector.hpp"
+#include "PinGUI_Vector.hpp"
 
 namespace PinGUI{
 

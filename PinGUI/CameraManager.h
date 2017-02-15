@@ -28,9 +28,9 @@
 /**
     GLM is included in here
 **/
-#include <glm/glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 
-#include "PinGUI/GUI_Sprite.h"
+#include "GUI_Sprite.h"
 
 class CameraManager
 {

@@ -25,10 +25,9 @@
 
 **/
 
-#include "PinGUI/GUI_Elements/Window.h"
-#include "PinGUI/Shader_Program.h"
+#include "GUI_Elements/Window.h"
+#include "Shader_Program.h"
 
-#define WINDOW_STORAGE_SIZE 200
 /**
     The main singleton for whole library
 **/
@@ -43,15 +42,15 @@ class PINGUI
 
          static Window* _mainWindow;
 
+         static Window* _mainCollider;
+
          static GUIManager* _mainGUIManager;
 
          /** Private methods **/
 
          static void checkActiveWindows();
 
-         static void initStorage();
-         
-         static bool collide(Window* win);
+         static void findMainCollider();
 
     public:
 

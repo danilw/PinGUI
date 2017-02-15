@@ -23,7 +23,7 @@
 **/
 
 #include "Scroller.h"
-
+#include <boost/bind.hpp>
 
 Scroller::Scroller(PinGUI::Vector2<GUIPos> pos, bool* update):
     _update(update),
@@ -96,7 +96,7 @@ void Scroller::setWritingAvailability(bool state){
 void Scroller::attachScrollerToInput(){
 
     PinGUI::basicPointer f;
-    f._function = std::bind(Scroller::checkForWheelMove,this);
+    f._function = boost::bind(&Scroller::checkForWheelMove,this);
 
     Input_Manager::setWheeledInfo(getSprite(1),_update,f);
 }

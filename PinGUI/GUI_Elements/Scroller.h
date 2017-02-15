@@ -26,7 +26,7 @@
 **/
 
 
-#include "PinGUI/GUI_Elements/Window_Arrow.h"
+#include "../GUI_Elements/Window_Arrow.h"
 
 #define WINDOW_SCROLLER_ARROW_MOVEMENT 7
 

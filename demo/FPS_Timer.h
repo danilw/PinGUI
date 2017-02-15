@@ -21,7 +21,7 @@
     3. This notice may not be removed or altered from any source distribution.
 **/
 
-#include <SDL.h>
+#include <SDL2/SDL.h>
 
 class FPS_Timer
 {

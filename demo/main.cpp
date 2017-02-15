@@ -20,12 +20,13 @@
     3. This notice may not be removed or altered from any source distribution.
 **/
 
-#include <SDL.h>
+#include <SDL2/SDL.h>
 #include <GL/glew.h>
 
-#include "PinGUI/PINGUI.h"
-#include "PinGUI/GUI_Elements/WindowButton.h"
+#include "../PinGUI/PINGUI.h"
+#include "../PinGUI/GUI_Elements/WindowButton.h"
 #include "FPS_Timer.h"
+
 
 
 SDL_Window* _mainWindow = nullptr;
@@ -153,18 +154,17 @@ void render(){
 }
 
 void initSDL_OGL(){
+	
 
     //Initializing SDL video
     if (SDL_Init(SDL_INIT_VIDEO)!=0){
        ErrorManager::fileError(SDL_GetError());
     }
 
-
     if (TTF_Init()==1){
         ErrorManager::systemError("Failed to init TTF");
     }
     IMG_Init(IMG_INIT_PNG);
-
     //Here i initialize SDL window with OpenGL flag - to access the OpenGL content
     _mainWindow = SDL_CreateWindow("PinGUI_Demo",SDL_WINDOWPOS_CENTERED,SDL_WINDOWPOS_CENTERED,1024,768,SDL_WINDOW_OPENGL);
     if (_mainWindow==nullptr){

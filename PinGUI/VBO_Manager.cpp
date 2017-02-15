@@ -21,8 +21,9 @@
     3. This notice may not be removed or altered from any source distribution.
 
 **/
-
+ 
 #include "VBO_Manager.h"
+#include <stddef.h>
 
 VBO_Manager::VBO_Manager(int limit, bool vao):
     _counter(1),

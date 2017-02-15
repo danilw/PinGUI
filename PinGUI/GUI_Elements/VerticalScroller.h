@@ -26,7 +26,7 @@
 **/
 
 
-#include "PinGUI/GUI_Elements/Scroller.h"
+#include "../GUI_Elements/Scroller.h"
 
 class VerticalScroller: public Scroller
 {

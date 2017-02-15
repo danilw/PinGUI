@@ -23,7 +23,7 @@
 **/
 
 #include "VerticalScroller.h"
-
+#include <boost/bind.hpp>
 
 VerticalScroller::VerticalScroller(PinGUI::Vector2<GUIPos> pos, int value, bool* update, std::vector<GUI_Element*>* _ELEMENTS):
     Scroller(pos,update)
@@ -48,10 +48,10 @@ VerticalScroller::~VerticalScroller()
 
 void VerticalScroller::createArrows(std::vector<GUI_Element*>* _ELEMENTS){
     PinGUI::basicPointer f1;
-    f1._function = std::bind(VerticalScroller::incScroller,this);
+    f1._function = boost::bind(&VerticalScroller::incScroller,this);
 
     PinGUI::basicPointer f2;
-    f2._function = std::bind(VerticalScroller::decScroller,this);
+    f2._function = boost::bind(&VerticalScroller::decScroller,this);
 
     PinGUI::Rect tmpRect;
     tmpRect.w = WINDOW_ARROW_W;
